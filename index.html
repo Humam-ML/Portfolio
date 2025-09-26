@@ -1,0 +1,665 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Humam | Data Analytics Portfolio - Showcasing innovative data analysis and visualization projects">
+  <meta name="keywords" content="data analytics, data science, portfolio, humam, visualization, machine learning">
+  <meta name="author" content="Humam">
+  <title>Humam | Data Analytics Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f1f5f9;
+      background-color: #0f172a;
+    }
+    
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hidden-page {
+      display: none;
+    }
+    
+    .active-nav {
+      background-color: #7e22ce !important;
+      color: white !important;
+    }
+    
+    .inactive-nav {
+      color: #cbd5e1;
+      transition: all 0.3s;
+    }
+    
+    .inactive-nav:hover {
+      color: white;
+      background-color: #1e293b;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+  <!-- Navigation -->
+  <nav class="bg-slate-900/90 backdrop-blur-sm fixed w-full z-10 border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mr-3 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Humam Analytics</span>
+          </div>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <button id="home-btn" class="px-3 py-2 text-sm font-medium rounded-lg active-nav">
+            Home
+          </button>
+          <button id="projects-btn" class="px-3 py-2 text-sm font-medium rounded-lg inactive-nav">
+            Projects
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="home-page" class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="mb-8">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Humam</h1>
+          <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+            Transforming Data into Strategic Insights
+          </p>
+        </div>
+        
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Data Analysis</h3>
+            <p class="text-gray-300 text-sm">Extracting meaningful patterns from complex datasets</p>
+          </div>
+          
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Visualization</h3>
+            <p class="text-gray-300 text-sm">Creating compelling visual stories from data</p>
+          </div>
+          
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Machine Learning</h3>
+            <p class="text-gray-300 text-sm">Building predictive models for business outcomes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 px-4 bg-slate-900">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">About Humam</h2>
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+          <p class="text-lg text-gray-300 mb-6">
+            I'm a data analytics professional with a passion for transforming raw data into actionable business insights. 
+            With expertise spanning statistical analysis, machine learning, and data visualization, I help organizations 
+            make data-driven decisions that drive growth and efficiency.
+          </p>
+          <p class="text-lg text-gray-300 mb-6">
+            My approach combines technical excellence with business acumen, ensuring that analytical solutions not only 
+            work technically but also deliver tangible business value. I specialize in Python, SQL, and modern BI tools 
+            to create end-to-end data solutions.
+          </p>
+          <p class="text-lg text-gray-300">
+            Explore my projects below to see how I've helped organizations unlock the power of their data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="py-16 px-4 bg-gradient-to-b from-slate-900 to-purple-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 2: Car Market Analysis -->
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 project-card" data-id="2">
+            <h3 class="text-xl font-bold text-white mb-3">Car Market Analysis</h3>
+            <p class="text-gray-300 mb-4">This project delves into a comprehensive analysis of car sales data, aiming to uncover critical insights into sales performance, pricing strategies, and market segmentation. By examining a dataset containing various attributes such as Manufacturer, Model, Fuel type, Engine size, Mileage, Year of manufacture, and Price, the analysis provides a detailed understanding of the factors influencing car sales and pricing dynamics. The primary goal is to extract actionable intelligence that can inform business decisions related to inventory management, marketing, and pricing optimization.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Python</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Pandas</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Matplotlib/Seaborn</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Scikit-learn</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Random Forest Regressor</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Power BI</span>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">0.998</div>
+                <div class="text-xs text-gray-400">R²</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">$266</div>
+                <div class="text-xs text-gray-400">MAE</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">46.88K</div>
+                <div class="text-xs text-gray-400">Total Car Count</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 3: Adult Income Analysis -->
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 project-card" data-id="3">
+            <h3 class="text-xl font-bold text-white mb-3">Adult Income Analysis</h3>
+            <p class="text-gray-300 mb-4">This project undertakes a comprehensive Exploratory Data Analysis (EDA) to investigate the factors influencing income levels within a demographic dataset. The primary objective was to uncover significant socio-economic indicators that correlate with an individual's income, specifically distinguishing between those earning <=50K and >50K annually. Utilizing a rich dataset containing various attributes such as age, workclass, education, marital status, occupation, race, sex, capital gains/losses, hours worked per week, and native country, this analysis provides deep insights into income disparities and their underlying drivers.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Python</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Pandas</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Matplotlib/Seaborn</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Scikit-learn</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">XGBoost</span>
+              <span class="px-3 py-1 bg-slate-700 text-purple-300 text-xs rounded-full">Power BI</span>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">~0.928</div>
+                <div class="text-xs text-gray-400">ROC-AUC</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">~0.718</div>
+                <div class="text-xs text-gray-400">F1</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-400">27.91K</div>
+                <div class="text-xs text-gray-400">Total Individuals Analyzed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button id="view-all-projects" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            View All Projects
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Projects Page -->
+  <div id="projects-page" class="hidden-page min-h-screen bg-slate-900 pt-20">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white mb-4">Data Analytics Projects</h1>
+        <p class="text-xl text-gray-300">Explore my portfolio of data-driven solutions</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project 1: HR Analysis -->
+        <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">HR Analysis</h3>
+              <div class="flex space-x-2">
+                <a href="https://colab.research.google.com/drive/10q6cmLLFoW95o9kjdU09f2siFQVyNIUP?usp=sharing" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Jupyter Notebook" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNmVkNmE5ZGItMjRiYS00YjBlLTlkMDItOWZkYjgyN2Q4OTg2IiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Dashboard" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 mb-6">This project focuses on developing a robust salary prediction model and conducting in depth HR analytics for data professionals within a company. Leveraging a comprehensive dataset that includes demographic information, employment details, performance ratings, and past experience, the project aims to identify key drivers of salary, assess pay equity, and provide data-driven insights for compensation strategies. The ultimate goal is to create a fair and transparent compensation framework that aligns with market trends and internal performance.</p>
+            
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tools & Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Pandas</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Matplotlib/Seaborn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Scikit-learn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">ElasticNet</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Power BI</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">~0.90</div>
+                  <div class="text-xs text-gray-400">R²</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">$4,600</div>
+                  <div class="text-xs text-gray-400">MAE</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">2458</div>
+                  <div class="text-xs text-gray-400">Total Employee Count</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">$56.82K</div>
+                  <div class="text-xs text-gray-400">Average Salary</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">25</div>
+                  <div class="text-xs text-gray-400">Average Age</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Interactive Dashboard</h4>
+              <div class="border border-slate-700 rounded-lg overflow-hidden">
+                <iframe title="salaries power bi" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiNmVkNmE5ZGItMjRiYS00YjBlLTlkMDItOWZkYjgyN2Q4OTg2IiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" frameborder="0" allowfullscreen class="w-full"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2: Car Market Analysis -->
+        <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">Car Market Analysis</h3>
+              <div class="flex space-x-2">
+                <a href="https://colab.research.google.com/drive/14rG2buYCHyVuczRGEdy1fnk5O-y9AkOJ?usp=sharing" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Jupyter Notebook" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMjJlMDg5NTQtZTkyMS00ODM3LTk1MTYtMDgyNDg0MmM0YWZjIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Dashboard" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 mb-6">This project delves into a comprehensive analysis of car sales data, aiming to uncover critical insights into sales performance, pricing strategies, and market segmentation. By examining a dataset containing various attributes such as Manufacturer, Model, Fuel type, Engine size, Mileage, Year of manufacture, and Price, the analysis provides a detailed understanding of the factors influencing car sales and pricing dynamics. The primary goal is to extract actionable intelligence that can inform business decisions related to inventory management, marketing, and pricing optimization.</p>
+            
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tools & Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Pandas</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Matplotlib/Seaborn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Scikit-learn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Random Forest Regressor</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Power BI</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">0.998</div>
+                  <div class="text-xs text-gray-400">R²</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">$266</div>
+                  <div class="text-xs text-gray-400">MAE</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">46.88K</div>
+                  <div class="text-xs text-gray-400">Total Car Count</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">$11.20K</div>
+                  <div class="text-xs text-gray-400">Average Price</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">21.56</div>
+                  <div class="text-xs text-gray-400">Average Vehicle Age</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Interactive Dashboard</h4>
+              <div class="border border-slate-700 rounded-lg overflow-hidden">
+                <iframe title="cars_dashboard" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiMjJlMDg5NTQtZTkyMS00ODM3LTk1MTYtMDgyNDg0MmM0YWZjIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" frameborder="0" allowfullscreen class="w-full"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3: Adult Income Analysis -->
+        <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">Adult Income Analysis</h3>
+              <div class="flex space-x-2">
+                <a href="https://colab.research.google.com/drive/15woA0nfwkyiUust1nWrAILJ_hSM_pivQ?usp=sharing" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Jupyter Notebook" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMDM5ODIxMWMtODY1Yy00Y2I4LWE0ZjUtY2Y4ZWI2OGZhN2I1IiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Dashboard" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 mb-6">This project undertakes a comprehensive Exploratory Data Analysis (EDA) to investigate the factors influencing income levels within a demographic dataset. The primary objective was to uncover significant socio-economic indicators that correlate with an individual's income, specifically distinguishing between those earning <=50K and >50K annually. Utilizing a rich dataset containing various attributes such as age, workclass, education, marital status, occupation, race, sex, capital gains/losses, hours worked per week, and native country, this analysis provides deep insights into income disparities and their underlying drivers.</p>
+            
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tools & Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Pandas</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Matplotlib/Seaborn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Scikit-learn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">XGBoost</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Power BI</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">~0.928</div>
+                  <div class="text-xs text-gray-400">ROC-AUC</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">~0.718</div>
+                  <div class="text-xs text-gray-400">F1</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">27.91K</div>
+                  <div class="text-xs text-gray-400">Total Individuals Analyzed</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">38</div>
+                  <div class="text-xs text-gray-400">Average Age</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">41</div>
+                  <div class="text-xs text-gray-400">Average Hours Worked Per Week</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Interactive Dashboard</h4>
+              <div class="border border-slate-700 rounded-lg overflow-hidden">
+                <iframe title="Adult_income_dashboard" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiMDM5ODIxMWMtODY1Yy00Y2I4LWE0ZjUtY2Y4ZWI2OGZhN2I1IiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" frameborder="0" allowfullscreen class="w-full"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4: Nashville Housing Analysis -->
+        <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">Nashville Housing Analysis</h3>
+              <div class="flex space-x-2">
+                <a href="https://colab.research.google.com/drive/1bK7CcNbuR4h27TUHoZwc1Y3atP5Kx1Ar?usp=sharing" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Jupyter Notebook" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMjMwOTNkNDgtMzY1ZS00MjFmLWFjMjMtYzQ5OTA4NjY3MWZkIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Dashboard" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 mb-6">This project focuses on cleaning and transforming raw Nashville housing data using SQL queries. It performs exploratory data analysis to understand trends such as average sale price per year built and per city. The notebook also visualizes correlations between various property features like building value and sale price. Furthermore, it identifies outliers and ranks the most expensive sales within each city. Finally, it analyzes sales trends over time, including running totals and moving averages.</p>
+            
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tools & Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">SQL</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Pandas</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Matplotlib/Seaborn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Power BI</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">"Brentwood" Average Price of 488.68K</div>
+                  <div class="text-xs text-gray-400">Most Expensive City</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">"Nashville"</div>
+                  <div class="text-xs text-gray-400">The City With The Most Houses Sold</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">"PT BSMT"</div>
+                  <div class="text-xs text-gray-400">Most Expensive Foundation Type</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Interactive Dashboard</h4>
+              <div class="border border-slate-700 rounded-lg overflow-hidden">
+                <iframe title="Nashville Dashboard" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiMjMwOTNkNDgtMzY1ZS00MjFmLWFjMjMtYzQ5OTA4NjY3MWZkIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" frameborder="0" allowfullscreen class="w-full"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5: Brazilian e-commerce -->
+        <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">Brazilian e-commerce</h3>
+              <div class="flex space-x-2">
+                <a href="https://colab.research.google.com/drive/122xVVtbxts2qI7Y_JIas7np7SBJR1cc-?usp=sharing" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Jupyter Notebook" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZGQwOTExMTAtZGM2OC00MDNhLWEzZmItNjhiYWY3MGRmNzNmIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" class="w-10 h-10 bg-slate-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors" title="Dashboard" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 mb-6">This project analyzes a Brazilian e-commerce dataset to uncover key business insights. It covers order trends over time, geographical distribution of customers, product and seller performance, customer satisfaction through reviews, payment method preferences, and customer segmentation using RFM analysis. The goal is to provide a comprehensive understanding of the e-commerce landscape to inform strategic decision-making.</p>
+            
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tools & Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">SQL</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Python</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Pandas</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Matplotlib/Seaborn</span>
+                <span class="px-3 py-1 bg-slate-700 text-purple-300 text-sm rounded-full">Power BI</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-6">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">$154.13</div>
+                  <div class="text-xs text-gray-400">Average Order Price</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">Credit Card 73.93%</div>
+                  <div class="text-xs text-gray-400">Order Most Frequent Payment Option</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-400">"bed_bath_table" 11.1K</div>
+                  <div class="text-xs text-gray-400">Highest Number of Orders Category</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Interactive Dashboard</h4>
+              <div class="border border-slate-700 rounded-lg overflow-hidden">
+                <iframe title="E_commers" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiZGQwOTExMTAtZGM2OC00MDNhLWEzZmItNjhiYWY3MGRmNzNmIiwidCI6ImM5NGQzNzNmLTVmMzMtNDVmNC05MWVkLTdhMTIxMWM4MTFiOCIsImMiOjl9" frameborder="0" allowfullscreen class="w-full"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-700 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-6 md:mb-0">
+          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mr-3 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Humam Analytics</h3>
+            <p class="text-gray-400 text-sm">Data-Driven Insights for Modern Businesses</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/humam-al-ogaidi-94bbab2a2/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+          <a href="mailto:humamalogaidi0@gmail.com" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="mt-8 pt-8 border-t border-slate-700 text-center">
+        <p class="text-gray-400">
+          &copy; 2023 Humam. All rights reserved. Designed with passion for data.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const homePage = document.getElementById('home-page');
+      const projectsPage = document.getElementById('projects-page');
+      const homeBtn = document.getElementById('home-btn');
+      const projectsBtn = document.getElementById('projects-btn');
+      const viewAllProjectsBtn = document.getElementById('view-all-projects');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      // Navigation functions
+      function showHomePage() {
+        homePage.classList.remove('hidden-page');
+        projectsPage.classList.add('hidden-page');
+        homeBtn.classList.add('active-nav');
+        homeBtn.classList.remove('inactive-nav');
+        projectsBtn.classList.remove('active-nav');
+        projectsBtn.classList.add('inactive-nav');
+      }
+      
+      function showProjectsPage() {
+        homePage.classList.add('hidden-page');
+        projectsPage.classList.remove('hidden-page');
+        projectsBtn.classList.add('active-nav');
+        projectsBtn.classList.remove('inactive-nav');
+        homeBtn.classList.remove('active-nav');
+        homeBtn.classList.add('inactive-nav');
+      }
+      
+      // Event listeners
+      homeBtn.addEventListener('click', showHomePage);
+      projectsBtn.addEventListener('click', showProjectsPage);
+      viewAllProjectsBtn.addEventListener('click', showProjectsPage);
+      
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const projectId = card.getAttribute('data-id');
+          showProjectsPage();
+          
+          // Scroll to the specific project if needed
+          if (projectId) {
+            const projectElement = document.querySelector(`.bg-slate-800.rounded-2xl.overflow-hidden.border:nth-child(${projectId})`);
+            if (projectElement) {
+              setTimeout(() => {
+                projectElement.scrollIntoView({ behavior: 'smooth' });
+              }, 300);
+            }
+          }
+        });
+      });
+      
+      // Initialize with home page visible
+      showHomePage();
+    });
+  </script>
+</body>
+</html>
+```
